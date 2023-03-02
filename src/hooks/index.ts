@@ -1,0 +1,1 @@
+export { useGetShips } from './useGetShips';

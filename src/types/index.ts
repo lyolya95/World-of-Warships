@@ -1,0 +1,1 @@
+export { TShip } from './ship';

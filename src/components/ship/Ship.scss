@@ -1,0 +1,54 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(34, 165, 165, 0.51);
+  cursor: pointer;
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.card-inner img {
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  text-align: center;
+  z-index: 2;
+}
+
+.text div {
+  color: #eeeeee;
+  display: inline-block;
+  font-size: 25px;
+  line-height: 45px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.card:hover:before {
+  opacity: 1;
+  background: rgba(253, 173, 0, 0.5);
+  border: 1px solid #fd6200;
+}
+.card:hover img {
+  transform-origin: center bottom;
+  transform: rotateX(-90deg) translateY(100%);
+}
+
+.card:hover .text div {
+  opacity: 1;
+}
