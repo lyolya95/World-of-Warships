@@ -1,1 +1,1 @@
-export { Ships } from './Ships'
+export { Ships } from './Ships';

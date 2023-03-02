@@ -1,5 +1,5 @@
-import {TShip} from "../../types";
+import { TShip } from '../../types';
 
 export type ShipsProps = {
-    ships: TShip[];
-}
+  ships: TShip[];
+};
