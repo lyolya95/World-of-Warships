@@ -1,9 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import {useCallback, useLayoutEffect, useState} from 'react';
 import axios from 'axios';
 import { TShip } from '../types';
 import { mappingData } from '../utils';
 
 type UseGetShips = { ships: TShip[]; loading: boolean };
+
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const apiUrl = 'https://vortex.worldofwarships.eu/api/encyclopedia/en/vehicles/';
 
 export const useGetShips = (): UseGetShips => {
   const [ships, setShips] = useState<TShip[]>([]);
@@ -12,9 +15,7 @@ export const useGetShips = (): UseGetShips => {
   const fetchData = useCallback(async () => {
     setLoading(true);
 
-    const { data } = await axios.get(
-      'https://vortex.worldofwarships.eu/api/encyclopedia/en/vehicles/'
-    );
+    const { data } = await axios.get(proxyUrl + apiUrl);
     const ships = await data.data;
 
     setShips(mappingData(ships));
@@ -22,7 +23,7 @@ export const useGetShips = (): UseGetShips => {
     setLoading(false);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
