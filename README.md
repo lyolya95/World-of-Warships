@@ -14,3 +14,12 @@ npm run start
 
 ---
 ^-^ 
+###deploy 
+
+!please before going go
+#https://cors-anywhere.herokuapp.com/corsdemo
+and press "Request temporary access to the demo server"
+
+##https://fancy-marigold-e77f42.netlify.app/
+
+
